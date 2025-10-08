@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darío Villar — Analista de Sistemas & Full-Stack</title>
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <!-- fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- iconos Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Font Awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="navbar">
+    <div class="brand">
+      <div class="logo">DV</div>
+      <div>
+        <h1>Darío Villar</h1>
+        <p class="title">Analista de Sistemas y Desarrollador Full-Stack</p>
+      </div>
+    </div>
+
+    <nav class="navlinks">
+      <a href="#inicio" data-i18n="nav.home">Inicio</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="#certificaciones" data-i18n="nav.courses">Cursos</a>
+      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </nav>
+
+    <div class="header-actions" style="display:flex;gap:8px;align-items:center">
+      <!-- Toggle tema -->
+      <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <!-- Toggle idioma -->
+      <button id="langToggle" class="icon-btn" aria-label="Change language">
+        <i class="fa-solid fa-language"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="snap-container">
+    <!-- HERO -->
+    <section id="inicio" class="hero section fade-in snap">
+      <img src="assets/profile.jpg" alt="Foto de Darío Villar" class="profile-photo" />
+      <div class="hero-text">
+        <h2 data-i18n="hero.hi">Hola, soy <span class="accent">Darío Villar</span></h2>
+        <p data-i18n="hero.lead">
+          Analista de Procesos (GCBA) y Desarrollador Web Full-Stack. Optimización de procesos, análisis de datos y desarrollo de sistemas con foco en impacto real.
+        </p>
+        <div class="quick-cards">
+          <div class="qc"><span data-i18n="hero.qc1">+ Power BI</span></div>
+          <div class="qc"><span data-i18n="hero.qc2">+ Spring Boot</span></div>
+          <div class="qc"><span data-i18n="hero.qc3">+ Node.js</span></div>
+          <div class="qc"><span data-i18n="hero.qc4">+ SQL</span></div>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span data-i18n="hero.scroll">Deslizá</span>
+        <i class="fa-solid fa-angles-down"></i>
+      </div>
+    </section>
+
+    <!-- SKILLS con iconos -->
+    <section id="skills" class="section fade-in snap">
+      <h2 data-i18n="skills.title">Skills / Habilidades</h2>
+      <div class="grid skills-grid">
+        <!-- Core backend/frontend -->
+        <div class="skill-card"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+        <div class="skill-card"><i class="devicon-spring-plain colored"></i><span>Spring Boot</span></div>
+        <div class="skill-card"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+        <div class="skill-card"><i class="devicon-express-original"></i><span>Express</span></div>
+        <div class="skill-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+
+        <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+        <div class="skill-card"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+        <div class="skill-card"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+        <div class="skill-card"><i class="devicon-react-original colored"></i><span>React</span></div>
+        <div class="skill-card"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
+        <div class="skill-card"><i class="devicon-csharp-plain colored"></i><span>C# .NET</span></div>
+        <!-- Datos -->
+        <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+        <div class="skill-card"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+        <div class="skill-card"><i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span></div>
+        <div class="skill-card"><i class="fa-solid fa-chart-column"></i><span>Power BI</span></div>
+        <div class="skill-card"><i class="fa-solid fa-file-excel"></i><span>Excel Avanzado</span></div>
+        <!-- DevOps / Gestión -->
+        <div class="skill-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+        <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+        <div class="skill-card"><i class="devicon-github-original"></i><span>GitHub</span></div>
+        <div class="skill-card"><i class="fa-solid fa-diagram-project"></i><span>UML</span></div>
+        <div class="skill-card"><i class="fa-solid fa-person-running"></i><span>Scrum</span></div>
+        <div class="skill-card"><i class="fa-solid fa-table-list"></i><span>Kanban</span></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="section fade-in snap">
+      <h2 data-i18n="exp.title">Experiencia</h2>
+      <div class="grid cards">
+        <article class="card">
+          <h3 data-i18n="exp.job1.title">Implementador / Analista — GCBA</h3>
+          <p class="meta" data-i18n="exp.job1.meta">Jun 2023 — Presente · Ministerio de Salud · Jefatura de Gabinete</p>
+          <ul>
+            <li data-i18n="exp.job1.li1">Monitoreo de agendas y KPIs (oferta/otorgamiento, sobreturnos, horas netas/semanales).</li>
+            <li data-i18n="exp.job1.li2">Dashboards ejecutivos (Power BI / Looker Studio) y automatizaciones en Excel/Sheets.</li>
+            <li data-i18n="exp.job1.li3">Optimización de procesos y soporte operativo a efectores.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Asistente Administrativo — GCBA</h3>
+          <p class="meta">Feb 2023 — Jun 2023</p>
+          <ul>
+            <li>Salud en tu Casa (Materno-Infantil, Dengue) y Vacunación COVID-19.</li>
+            <li>Gestión de datos y operativos territoriales.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Cajero — COTO C.I.C.S.A.</h3>
+          <p class="meta">Sep 2022 — Dic 2022</p>
+          <ul><li>Gestión de caja, resolución de incidencias, control de stock y precios.</li></ul>
+        </article>
+
+        <article class="card">
+          <h3>Operador de Telemarketing — CAT Technologies S.A.</h3>
+          <p class="meta">Ene 2021 — Ene 2022</p>
+          <ul><li>Atención/retención, reclamos y soporte de facturación en telecomunicaciones.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section id="educacion" class="section fade-in snap">
+      <h2>Educación</h2>
+      <div class="grid cards">
+        <article class="card">
+          <h3>Instituto Tecnológico ORT</h3>
+          <p class="meta">2023 – Actualidad</p>
+          <p>Analista de Sistemas</p>
+        </article>
+        <article class="card">
+          <h3>Universidad de Buenos Aires</h3>
+          <p class="meta">2024 – Actualidad</p>
+          <p>Ingeniería en Informática</p>
+        </article>
+        <article class="card">
+          <h3>Colegio Nacional de Buenos Aires (UBA)</h3>
+          <p class="meta">2013 – 2017</p>
+          <p>Bachiller</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CURSOS -->
+    <section id="certificaciones" class="section fade-in snap">
+      <h2 data-i18n="courses.title">Certificaciones y Cursos</h2>
+      <div class="grid cards">
+        <article class="card"><p data-i18n="courses.c1"><strong>Desarrollo Web Full Stack — Node.js</strong> · GCBA · Talento Tech</p></article>
+        <article class="card"><p data-i18n="courses.c2"><strong>Backend en Java — Spring Boot</strong> · GCBA · Talento Tech</p></article>
+        <article class="card"><p data-i18n="courses.c3"><strong>Power BI y Visualización de Datos</strong> · ISC</p></article>
+        <article class="card"><p data-i18n="courses.c4"><strong>Contabilidad y Finanzas Básicas</strong> · UTN</p></article>
+        <article class="card"><p data-i18n="courses.c5"><strong>Scrum · Kanban · Office Avanzado</strong></p></article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section fade-in snap">
+      <h2 data-i18n="projects.title">Proyectos</h2>
+      <div class="grid gallery">
+        <article class="tile">
+          <h3 >Essenza Sana</h3>
+          <p data-i18n="projects.p1">E-commerce saludable. API Java Spring Boot + MySQL; frontend responsive con Bootstrap/JS.</p>
+          <div class="proj-icons">
+            <i class="devicon-java-plain colored"></i>
+            <i class="devicon-spring-plain colored"></i>
+            <i class="devicon-mysql-plain colored"></i>
+            <i class="devicon-bootstrap-plain colored"></i>
+          </div>
+        </article>
+        <article class="tile">
+          <h3>Club Deportivo</h3>
+          <p data-i18n="projects.p2">Sistema .NET MVC con registro, roles, turnos, pagos y reportes.</p>
+          <div class="proj-icons">
+            <i class="devicon-csharp-plain colored"></i>
+            <i class="devicon-dotnetcore-plain colored"></i>
+            <i class="devicon-microsoftsqlserver-plain colored"></i>
+          </div>
+        </article>
+        <article class="tile">
+          <h3 data-i18n="projects.p3.title">Monitoreo de Turnos</h3>
+          <p data-i18n="projects.p3">Dashboards de oferta/otorgamiento, horas netas/semanales y performance por efector.</p>
+          <div class="proj-icons">
+            <i class="fa-solid fa-chart-column"></i>
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section fade-in snap">
+  <h2 data-i18n="contact.title">Contacto</h2>
+  <div class="contact grid">
+    <!-- Tarjeta de info con íconos -->
+    <div class="card contact-info">
+      <ul class="info-list">
+        <li>
+          <span class="icon-pill email"><i class="fa-solid fa-envelope"></i></span>
+          <a href="mailto:villardario.e@gmail.com">villardario.e@gmail.com</a>
+        </li>
+        <li>
+          <span class="icon-pill linkedin"><i class="fa-brands fa-linkedin-in"></i></span>
+          <a href="https://linkedin.com/in/darioevillar" target="_blank" rel="noopener">
+            linkedin.com/in/darioevillar
+          </a>
+        </li>
+        <li>
+          <span class="icon-pill github"><i class="fa-brands fa-github"></i></span>
+          <a href="https://github.com/darobits" target="_blank" rel="noopener">
+            github.com/darobits
+          </a>
+        </li>
+        <li>
+          <span class="icon-pill location"><i class="fa-solid fa-location-dot"></i></span>
+          <span>Caballito, CABA, Argentina</span>
+        </li>
+      </ul>
+    </div>
+
+        <!-- Form -->
+        <form class="card" id="contactForm" name="contact" novalidate>
+          <input type="text" name="company" tabindex="-1" aria-hidden="true" style="display:none">
+
+          <label for="name">
+            <span data-i18n="contact.name_label">Nombre</span>
+            <input id="name" type="text" name="name" required minlength="2" placeholder="Tu nombre completo">
+          </label>
+
+          <label for="email">
+            <span data-i18n="contact.mail_label">Email</span>
+            <input id="email" type="email" name="email" required placeholder="tu@email.com">
+          </label>
+
+          <label for="message">
+            <span data-i18n="contact.msg_label">Mensaje</span>
+            <textarea id="message" name="message" rows="4" required minlength="5" placeholder="Contame brevemente en qué puedo ayudar..."></textarea>
+          </label>
+
+          <button type="submit" class="btn" aria-label="Enviar formulario" data-i18n="contact.send">Enviar</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="f-brand">
+      <div class="logo">DV</div>
+      <div class="f-text">
+        <strong>Darío Villar</strong>
+        <span data-i18n="footer.copyName">Analista de Sistemas</span>
+      </div>
+    </div>
+
+    <nav class="f-links">
+      <a href="#inicio"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+      <a href="#skills"><i class="fa-solid fa-code"></i><span>Skills</span></a>
+      <a href="#proyectos"><i class="fa-solid fa-diagram-project"></i><span>Proyectos</span></a>
+      <a href="#contacto"><i class="fa-solid fa-paper-plane"></i><span>Contacto</span></a>
+    </nav>
+
+    <div class="f-social">
+      <a class="pill linkedin" href="https://linkedin.com/in/darioevillar" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a class="pill github" href="https://github.com/darobits" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a class="pill email" href="mailto:villardario.e@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="f-bottom">
+    <p>© <span id="year"></span> <span data-i18n="footer.copyName">Darío Villar — Analista de Sistemas</span></p>
+  </div>
+</footer>
+
+  <!-- Botón subir arriba -->
+<button id="backToTop" class="icon-btn back-to-top" aria-label="Volver arriba">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+</body>
+</html>
