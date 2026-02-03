@@ -350,3 +350,195 @@ h2{margin:0 0 14px 0;color:var(--accent)}
 section[id], .section {
   scroll-margin-top: calc(var(--header-h) + 12px);
 }
+
+/* 17) Cajas clickeables (tiles/cards con data-href) */
+.is-clickable{
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.is-clickable:hover{
+  transform:translateY(-3px);
+  border-color:var(--accent);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+.is-clickable:active{
+  transform:translateY(-1px) scale(.995);
+}
+
+/* 18) Feedback "escribiendo" en el formulario */
+#contactForm input.typing,
+#contactForm textarea.typing{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+  outline:none;
+}
+
+
+/* =========================
+   A) Navbar "fijo" en mobile
+   (mantiene estilo desktop; solo hace que no tape contenido)
+========================= */
+.navbar {
+  position: sticky;   /* ya estaba; lo reafirmamos */
+  top: 0;
+}
+section[id], .section {
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+/* =========================
+   B) Footer móvil 2×2 + iconos centrados
+   (desktop NO cambia)
+========================= */
+@media (max-width: 480px) {
+  .footer-inner{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Marca arriba centrada */
+  .f-brand{
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Conjunto de enlaces (Inicio/Skills/Proyectos/Contacto) en 2x2 */
+  .f-links{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px;
+  }
+  .f-links a{
+    justify-content: center;
+    padding: 10px 12px;
+  }
+
+  /* Iconos sociales centrados y en segunda fila */
+  .f-social{
+    justify-self: center !important;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Copyright centrado y con un poquito más de respiro */
+  .f-bottom{
+    text-align: center;
+    padding-bottom: 14px;
+  }
+}
+
+/* Un poco más de “toque” en los pills del footer en pantallas chicas */
+@media (max-width: 480px) {
+  .f-links a i { font-size: 1rem; }
+}
+
+/* =========================
+   C) Mejora pills de Contacto también en mobile
+   (no cambia desktop)
+========================= */
+@media (max-width: 480px) {
+  .contact-info .info-list{
+    grid-template-columns: 1fr;
+  }
+  .icon-pill{
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+}
+
+/* =========================
+   D) Ajuste estético de tema claro (más gris y contrastado)
+   (manteniendo tu paleta)
+========================= */
+:root{
+  --bg-light:#e7ebf0;
+  --card-light:#f7f9fc;
+  --border-light:rgba(0,0,0,.10);
+}
+[data-theme='light']{
+  --nav-bg: rgba(255,255,255,.82); /* un poco más suave */
+}
+
+/* ===== MOBILE NAV (hamburguesa) ===== */
+@media (max-width:700px){
+  /* header fijo en mobile */
+  .navbar{
+    position:fixed; top:0; left:0; right:0; z-index:60;
+  }
+  /* compensar altura del header para que el contenido no quede tapado */
+  body{ padding-top: var(--header-h); }
+
+  /* oculto nav por defecto en mobile */
+  .navlinks{
+    display:none;          /* tu regla existente se mantiene */
+    position:absolute;
+    top:100%; left:0; right:0;
+    background:var(--card);
+    border-bottom:1px solid var(--tile-border);
+    border-top:1px solid var(--tile-border);
+    padding:10px;
+    gap:10px;
+  }
+  /* cuando está abierto */
+  .navbar.is-open .navlinks{
+    display:grid;
+    grid-template-columns:1fr 1fr;       /* 2 columnas cómodas */
+  }
+  .navlinks a{
+    display:flex; align-items:center; gap:8px;
+    padding:10px 12px; border:1px solid var(--tile-border);
+    border-radius:999px; background:var(--chip-bg);
+  }
+}
+
+
+/* ===== HERO: espacio para el scroll-hint ===== */
+.hero{ padding-bottom:56px; }   /* más espacio bajo el hero */
+@media (max-width:700px){
+  .hero{ padding-bottom:64px; }
+}
+
+/* por si la sombra del contenedor lo tapa, aseguramos z-order agradable */
+.scroll-hint{ z-index:1; }
+
+/* ===== Header fijo + hamburguesa sólo en mobile ===== */
+@media (max-width: 800px){
+  .navbar{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+  }
+  /* Dejo espacio bajo el header fijo */
+  body{ padding-top: calc(var(--header-h) + 8px); }
+
+  /* El nav se vuelve un panel debajo del header */
+  .navlinks{
+    position: fixed;
+    top: var(--header-h);
+    left: 0; right: 0;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px) saturate(180%);
+    border-bottom: 1px solid var(--tile-border);
+    display: none;                 /* cerrado por defecto */
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 12px;
+  }
+  .navlinks a{
+    display: block;
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+  .navlinks.open{ display: flex; }
+
+  /* mostrar el botón hamburguesa */
+  #menuToggle{ display: inline-grid; }
+}
+
+/* En desktop oculto el hamburguesa (queda tu barra normal) */
+@media (min-width: 801px){
+  #menuToggle{ display: none; }
+}
+
+

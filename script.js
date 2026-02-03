@@ -10,17 +10,6 @@ window.addEventListener('load', setHeaderH);
 window.addEventListener('resize', setHeaderH);
 setHeaderH();
 
-// Navegación con offset (evita que el header tape el título)
-document.querySelectorAll('.navlinks a[href^="#"]').forEach(a => {
-  a.addEventListener('click', ev => {
-    ev.preventDefault();
-    const targetId = a.getAttribute('href');
-    const el = document.querySelector(targetId);
-    if (!el || !header) return;
-    const y = el.getBoundingClientRect().top + window.pageYOffset - (header.offsetHeight + 12);
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  });
-});
 
 
   // Habilita animaciones sólo si hay JS

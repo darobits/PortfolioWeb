@@ -20,34 +20,41 @@
   <div class="progress-bar" id="progressBar"></div>
 
   <header class="navbar">
-    <div class="brand">
-      <div class="logo">DV</div>
-      <div>
-        <h1>Darío Villar</h1>
-        <p class="title">Analista de Sistemas y Desarrollador Full-Stack</p>
-      </div>
+  <div class="brand">
+    <div class="logo">DV</div>
+    <div>
+      <h1>Darío Villar</h1>
+      <p class="title">Analista de Sistemas y Desarrollador Full-Stack</p>
     </div>
+  </div>
 
-    <nav class="navlinks">
-      <a href="#inicio" data-i18n="nav.home">Inicio</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
-      <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
-      <a href="#certificaciones" data-i18n="nav.courses">Cursos</a>
-      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-    </nav>
+  <!-- id para controlarlo desde JS -->
+  <nav class="navlinks" id="primaryNav">
+    <a href="#inicio" data-i18n="nav.home">Inicio</a>
+    <a href="#skills" data-i18n="nav.skills">Skills</a>
+    <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
+    <a href="#certificaciones" data-i18n="nav.courses">Cursos</a>
+    <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+    <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+  </nav>
 
-    <div class="header-actions" style="display:flex;gap:8px;align-items:center">
-      <!-- Toggle tema -->
-      <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">
-        <i class="fa-solid fa-moon"></i>
-      </button>
-      <!-- Toggle idioma -->
-      <button id="langToggle" class="icon-btn" aria-label="Change language">
-        <i class="fa-solid fa-language"></i>
-      </button>
-    </div>
-  </header>
+  <div class="header-actions" style="display:flex;gap:8px;align-items:center">
+    <!-- botón hamburguesa SOLO visible en mobile -->
+    <button id="menuToggle" class="icon-btn" aria-label="Abrir menú"
+            aria-controls="primaryNav" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <!-- Toggle tema -->
+    <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    <!-- Toggle idioma -->
+    <button id="langToggle" class="icon-btn" aria-label="Change language">
+      <i class="fa-solid fa-language"></i>
+    </button>
+  </div>
+</header>
+
 
   <main class="snap-container">
     <!-- HERO -->
@@ -109,7 +116,7 @@
       <h2 data-i18n="exp.title">Experiencia</h2>
       <div class="grid cards">
         <article class="card">
-          <h3 data-i18n="exp.job1.title">Implementador / Analista — GCBA</h3>
+          <h3 data-i18n="exp.job1.title">Analista de Gestión de procesos — GCBA</h3>
           <p class="meta" data-i18n="exp.job1.meta">Jun 2023 — Presente · Ministerio de Salud · Jefatura de Gabinete</p>
           <ul>
             <li data-i18n="exp.job1.li1">Monitoreo de agendas y KPIs (oferta/otorgamiento, sobreturnos, horas netas/semanales).</li>
@@ -125,12 +132,6 @@
             <li>Salud en tu Casa (Materno-Infantil, Dengue) y Vacunación COVID-19.</li>
             <li>Gestión de datos y operativos territoriales.</li>
           </ul>
-        </article>
-
-        <article class="card">
-          <h3>Cajero — COTO C.I.C.S.A.</h3>
-          <p class="meta">Sep 2022 — Dic 2022</p>
-          <ul><li>Gestión de caja, resolución de incidencias, control de stock y precios.</li></ul>
         </article>
 
         <article class="card">
@@ -176,38 +177,46 @@
     </section>
 
     <!-- PROYECTOS -->
-    <section id="proyectos" class="section fade-in snap">
-      <h2 data-i18n="projects.title">Proyectos</h2>
-      <div class="grid gallery">
-        <article class="tile">
-          <h3 >Essenza Sana</h3>
-          <p data-i18n="projects.p1">E-commerce saludable. API Java Spring Boot + MySQL; frontend responsive con Bootstrap/JS.</p>
-          <div class="proj-icons">
-            <i class="devicon-java-plain colored"></i>
-            <i class="devicon-spring-plain colored"></i>
-            <i class="devicon-mysql-plain colored"></i>
-            <i class="devicon-bootstrap-plain colored"></i>
-          </div>
-        </article>
-        <article class="tile">
-          <h3>Club Deportivo</h3>
-          <p data-i18n="projects.p2">Sistema .NET MVC con registro, roles, turnos, pagos y reportes.</p>
-          <div class="proj-icons">
-            <i class="devicon-csharp-plain colored"></i>
-            <i class="devicon-dotnetcore-plain colored"></i>
-            <i class="devicon-microsoftsqlserver-plain colored"></i>
-          </div>
-        </article>
-        <article class="tile">
-          <h3 data-i18n="projects.p3.title">Monitoreo de Turnos</h3>
-          <p data-i18n="projects.p3">Dashboards de oferta/otorgamiento, horas netas/semanales y performance por efector.</p>
-          <div class="proj-icons">
-            <i class="fa-solid fa-chart-column"></i>
-            <i class="fa-solid fa-file-excel"></i>
-          </div>
-        </article>
+  <section id="proyectos" class="section fade-in snap">
+  <h2 data-i18n="projects.title">Proyectos</h2>
+  <div class="grid gallery">
+    <article class="tile" tabindex="0" role="link"
+             aria-label="Abrir proyecto Essenza Sana"
+             data-href="https://darobits.github.io/frontendJS/">
+      <h3>Essenza Sana</h3>
+      <p data-i18n="projects.p1">E-commerce saludable. Frontend responsive con Bootstrap/JS.</p>
+      <div class="proj-icons">
+        <i class="devicon-javascript-plain colored"></i>
+        <i class="devicon-bootstrap-plain colored"></i>
+        <i class="devicon-html5-plain colored"></i>
+        <i class="devicon-css3-plain colored"></i>
       </div>
-    </section>
+    </article>
+
+    <article class="tile" tabindex="0" role="link"
+             aria-label="Abrir proyecto Club Deportivo"
+             data-href="https://github.com/darobits/ClubDeportivo">
+      <h3>Club Deportivo</h3>
+      <p data-i18n="projects.p2">Sistema .NET MVC con registro, roles y reserva de turnos / eventos.</p>
+      <div class="proj-icons">
+        <i class="devicon-csharp-plain colored"></i>
+        <i class="devicon-dotnetcore-plain colored"></i>
+        <i class="devicon-microsoftsqlserver-plain colored"></i>
+      </div>
+    </article>
+
+    <article class="tile" tabindex="0" role="link"
+             aria-label="Abrir proyecto Monitoreo de Turnos"
+             data-href="https://lookerstudio.google.com/s/ueLmTnPHZec">
+      <h3 data-i18n="projects.p3.title">Monitoreo de Turnos</h3>
+      <p data-i18n="projects.p3">Dashboards de oferta/otorgamiento, horas netas/semanales y performance por efector.</p>
+      <div class="proj-icons">
+        <i class="fa-solid fa-chart-column"></i>
+        <i class="fa-solid fa-file-excel"></i>
+      </div>
+    </article>
+  </div>
+</section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="section fade-in snap">
@@ -274,32 +283,28 @@
       <div class="logo">DV</div>
       <div class="f-text">
         <strong>Darío Villar</strong>
-        <span data-i18n="footer.copyName">Analista de Sistemas</span>
+        <span>Analista de Sistemas</span>
       </div>
     </div>
 
+    <!-- 4 pills: se acomodan 2×2 en mobile -->
     <nav class="f-links">
-      <a href="#inicio"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
-      <a href="#skills"><i class="fa-solid fa-code"></i><span>Skills</span></a>
-      <a href="#proyectos"><i class="fa-solid fa-diagram-project"></i><span>Proyectos</span></a>
-      <a href="#contacto"><i class="fa-solid fa-paper-plane"></i><span>Contacto</span></a>
+      <a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+      <a href="#proyectos"><i class="fa-solid fa-diagram-project"></i> Proyectos</a>
+      <a href="#contacto"><i class="fa-solid fa-paper-plane"></i> Contacto</a>
     </nav>
 
+    <!-- Iconos -->
     <div class="f-social">
-      <a class="pill linkedin" href="https://linkedin.com/in/darioevillar" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a class="pill github" href="https://github.com/darobits" target="_blank" rel="noopener" aria-label="GitHub">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a class="pill email" href="mailto:villardario.e@gmail.com" aria-label="Email">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
+      <a class="pill linkedin" href="https://linkedin.com/in/darioevillar" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="pill github" href="https://github.com/darobits" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a class="pill email" href="mailto:villardario.e@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
   </div>
 
   <div class="f-bottom">
-    <p>© <span id="year"></span> <span data-i18n="footer.copyName">Darío Villar — Analista de Sistemas</span></p>
+    © <span id="year"></span> Darío Villar — Analista de Sistemas
   </div>
 </footer>
 
